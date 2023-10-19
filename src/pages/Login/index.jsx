@@ -36,8 +36,6 @@ export const Login = () => {
     }
   }
 
-  console.log(isAuth )
-
   useEffect(() => {
 
   }, []);
