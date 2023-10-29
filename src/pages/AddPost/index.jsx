@@ -71,13 +71,16 @@ export const AddPost = () => {
 
   useEffect(() => {
     if (id) {
-      instance.get(`/posts/${id}`).then(({data})=>{
+      instance.get(`/posts/${id}`)
+         .then(({data})=>{
         setTitile(data.title)
         setText(data.text)
         setTags(data.tags.join(','))
         setImageUrl(data.imageUrl)
-      }).catch((err)=>{
+      })
+         .catch((err)=>{
         console.warn(err)
+           alert('ошибка при получении данных статьи')
       })
     }
   }, []);
@@ -119,7 +122,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
             Удалить
           </Button>
-          <img className={styles.image} src={`http://localhost:4445${imageUrl}`} alt="Uploaded" />
+          <img className={styles.image} src={`${process.env.REACT_APP_API_URL}${imageUrl}`} alt="Uploaded" />
         </>
       )}
       <br />
