@@ -19,9 +19,9 @@ export const Registration = () => {
     handleSubmit,
   } = useForm({
     defaultValues: {
-      fullName: 'Пупкин Пуп',
-      email: 'test1234@mail.ru',
-      password: '1234'
+      fullName: '',
+      email: '',
+      password: ''
     },
     mode: 'onChange'
   })
@@ -66,7 +66,7 @@ export const Registration = () => {
                  helperText={errors.password?.message}
                  {...register('password', {required: 'Укажите пароль'})}
       />
-      <Button disabled={!isValid} type='submit' size="large" variant="contained" fullWidth>
+      <Button disabled={!isValid} color='success' type='submit' size="large" variant="contained" fullWidth>
         Зарегистрироваться
       </Button>
       </form>
