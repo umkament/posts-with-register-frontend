@@ -68,6 +68,7 @@ export const Login = () => {
         />
         <Button size="large"
                 variant="contained"
+                color='success'
                 fullWidth
                 type="submit"
         >
