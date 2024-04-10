@@ -36,7 +36,7 @@ export const Home = () => {
                 : <Post
               id={item._id}
               title={item.title}
-              imageUrl={item.imageUrl ? `${process.env.REACT_APP_API_URL}${item.imageUrl}`: ''}
+              imageUrl={item.imageUrl ? `${process.env.REACT_APP_BLOG_API}${item.imageUrl}`: ''}
               //imageUrl="https://res.cloudinary.com/practicaldev/image/fetch/s--UnAfrEG8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/icohm5g0axh9wjmu4oc3.png"
               user={item.user}
               createdAt={item.createdAt}
