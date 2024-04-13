@@ -24,37 +24,39 @@ export const AddPost = () => {
   const {id} = useParams()
   const isEditing = Boolean(id)
 
-  // const handleChangeFile = async (event) => {
-  //   console.log(event.target.files)
-  //   try {
-  //     const formData = new FormData()
-  //     const file= event.target.files[0]
-  //     formData.append('image', file)
-  //     const {data} = await instance.post('/upload', formData)
-  //     setImageUrl(data.url)
-  //   } catch (err) {
-  //     console.warn(err)
-  //     alert('ошибка при загрузке файла')
-  //   }
-  // };
-
   const handleChangeFile = async (event) => {
+    console.log(event.target.files)
     try {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-
-      reader.onloadend = function() {
-        const imageData = reader.result; // Получаем base64 строку изображения
-        console.log(imageData); // Убедитесь, что данные изображения выводятся корректно в консоль
-        // Здесь отправляем imageData на бэкенд
-      };
-
-      reader.readAsDataURL(file);
+      const formData = new FormData()
+      const file= event.target.files[0]
+      formData.append('image', file)
+      const {data} = await instance.post('/upload', formData)
+      setImageUrl(data.url)
     } catch (err) {
-      console.warn(err);
-      alert('Ошибка при загрузке файла');
+      console.warn(err)
+      alert('ошибка при загрузке файла')
     }
   };
+
+
+  //новый вариант, на данный момент не работающий
+  // const handleChangeFile = async (event) => {
+  //   try {
+  //     const file = event.target.files[0];
+  //     const reader = new FileReader();
+  //
+  //     reader.onloadend = function() {
+  //       const imageData = reader.result; // Получаем base64 строку изображения
+  //       console.log(imageData); // Убедитесь, что данные изображения выводятся корректно в консоль
+  //       // Здесь отправляем imageData на бэкенд
+  //     };
+  //
+  //     reader.readAsDataURL(file);
+  //   } catch (err) {
+  //     console.warn(err);
+  //     alert('Ошибка при загрузке файла');
+  //   }
+  // };
 
   const onClickRemoveImage = () => {
     setImageUrl('')
