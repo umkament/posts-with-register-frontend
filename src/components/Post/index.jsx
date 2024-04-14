@@ -54,6 +54,7 @@ export const Post = ({
         </div>
       )}
       <img src={imageUrl} alt={'imageUrl'}/>
+      
       {/*{imageUrl && (*/}
       {/*  <img*/}
       {/*    className={clsx(styles.image, { [styles.imageFull]: isFullPost })}*/}
