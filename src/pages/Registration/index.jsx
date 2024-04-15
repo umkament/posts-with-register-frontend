@@ -12,11 +12,12 @@ import {useForm} from "react-hook-form";
 //import {Navigate} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
+
 
 export const Registration = () => {
   const isAuth = useSelector(isAuthSelector)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const {
     register,
     formState: {errors, isValid},
