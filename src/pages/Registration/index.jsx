@@ -9,7 +9,8 @@ import styles from './Login.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAuth, fetchRegistration, isAuthSelector} from "../../redux/slices/auth.slice";
 import {useForm} from "react-hook-form";
-import {Navigate} from "react-router-dom";
+//import {Navigate} from "react-router-dom";
+import { navigate } from "react-router-dom";
 
 export const Registration = () => {
   const isAuth = useSelector(isAuthSelector)
@@ -34,13 +35,13 @@ export const Registration = () => {
     }
     if ('token' in data.payload) {
       window.localStorage.setItem('token', data.payload.token);
-      //navigate('/')
+      navigate('/')
     }
   }
 
-  if (isAuth) {
-    return <Navigate to='/'/>
-  }
+  // if (isAuth) {
+  //   return <Navigate to='/'/>
+  // }
 
   return (
     <Paper classes={{ root: styles.root }}>
