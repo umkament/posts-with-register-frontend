@@ -19,11 +19,15 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: {
     data: null,
-    status: 'loading'
+    status: 'loading',
+    isLoading: false
   },
   reducers: {
     logout: (state)=>{
       state.data = null
+    },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
     }
   },
   extraReducers: (builder)=>{

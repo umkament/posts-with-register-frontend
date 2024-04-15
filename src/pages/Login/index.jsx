@@ -17,7 +17,7 @@ export const Login = () => {
 
   const isAuth = useSelector(isAuthSelector)
   const dispatch = useDispatch()
-  const isLoading = isAuth.status === 'loading'
+  const isLoading = useSelector(state=>state.auth.isLoading)
 
   const {
     register,
