@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import CircularProgress from '@mui/material/CircularProgress';
 
 import styles from "./Login.module.scss";
 import {useDispatch, useSelector} from "react-redux";
@@ -11,8 +12,11 @@ import {fetchAuth, isAuthSelector} from "../../redux/slices/auth.slice";
 import {Navigate} from "react-router-dom";
 
 export const Login = () => {
+
   const isAuth = useSelector(isAuthSelector)
   const dispatch = useDispatch()
+  const isLoading = isAuth.status === 'loading'
+
   const {
     register,
     formState: {errors, isValid},
@@ -42,6 +46,7 @@ export const Login = () => {
 
   return (
     <Paper classes={{ root: styles.root }} elevation={4}>
+      {isLoading && <CircularProgress />}
       <Typography classes={{ root: styles.title }} variant="h5">
         Вход в аккаунт
       </Typography>
