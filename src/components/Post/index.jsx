@@ -53,8 +53,6 @@ export const Post = ({
           </IconButton>
         </div>
       )}
-     // <img src={imageUrl} alt={'imageUrl'}/>
-
       {imageUrl && (
         <img
           className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
