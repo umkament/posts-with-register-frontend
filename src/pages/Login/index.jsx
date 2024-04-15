@@ -12,6 +12,8 @@ import {fetchAuth, isAuthSelector} from "../../redux/slices/auth.slice";
 import {Navigate} from "react-router-dom";
 
 export const Login = () => {
+ 
+
 
   const isAuth = useSelector(isAuthSelector)
   const dispatch = useDispatch()
@@ -43,7 +45,7 @@ export const Login = () => {
   if (isAuth) {
     return <Navigate to='/'/>
   }
-
+  console.log('isLoading:', isLoading);
   return (
     <Paper classes={{ root: styles.root }} elevation={4}>
       {isLoading && <CircularProgress />}
