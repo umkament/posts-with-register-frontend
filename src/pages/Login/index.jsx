@@ -48,6 +48,7 @@ export const Login = () => {
       setIsLoading(false); // Возвращаем isLoading в false после получения ответа
     }
   }
+  
 
   if (isAuth) {
     return <Navigate to='/'/>
