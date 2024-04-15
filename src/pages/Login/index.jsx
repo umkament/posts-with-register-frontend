@@ -18,13 +18,13 @@ export const Login = () => {
     formState: {errors, isValid},
     handleSubmit,
     setError
-  } = useForm(/*{
+  } = useForm({
     defaultValues: {
-      email: '1newmail@mail.ru',
-      password: '1234'
+      email: '',
+      password: ''
     },
      mode: 'onChange'
-  }*/)
+  })
 
   const onSubmit = async (values)=>{
     const data = await dispatch(fetchAuth(values))
@@ -35,10 +35,6 @@ export const Login = () => {
       window.localStorage.setItem('token', data.payload.token)
     }
   }
-
- /* useEffect(() => {
-
-  }, []);*/
 
   if (isAuth) {
     return <Navigate to='/'/>
