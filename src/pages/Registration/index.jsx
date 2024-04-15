@@ -10,7 +10,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchAuth, fetchRegistration, isAuthSelector} from "../../redux/slices/auth.slice";
 import {useForm} from "react-hook-form";
 //import {Navigate} from "react-router-dom";
-import { navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
 
 export const Registration = () => {
   const isAuth = useSelector(isAuthSelector)
