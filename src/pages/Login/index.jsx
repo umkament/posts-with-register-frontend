@@ -36,9 +36,9 @@ export const Login = () => {
     }
   }
 
-  useEffect(() => {
+ /* useEffect(() => {
 
-  }, []);
+  }, []);*/
 
   if (isAuth) {
     return <Navigate to='/'/>
