@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
@@ -17,7 +17,7 @@ export const Login = () => {
 
   const isAuth = useSelector(isAuthSelector)
   const dispatch = useDispatch()
-  const isLoading = useSelector(state=>state.auth.isLoading)
+  const [isLoading, setIsLoading] = useState(false)
 
   const {
     register,
@@ -33,12 +33,26 @@ export const Login = () => {
   })
 
   const onSubmit = async (values)=>{
-    const data = await dispatch(fetchAuth(values))
-    if (!data.payload) {
-      return alert('Не удалось авторизоваться!')
-    }
-    if ('token' in data.payload) {
-      window.localStorage.setItem('token', data.payload.token)
+    // const data = await dispatch(fetchAuth(values))
+    // if (!data.payload) {
+    //   return alert('Не удалось авторизоваться!')
+    // }
+    // if ('token' in data.payload) {
+    //   window.localStorage.setItem('token', data.payload.token)
+    // }
+    setIsLoading(true); // Устанавливаем isLoading в true перед отправкой запроса
+    try {
+      const data = await dispatch(fetchAuth(values));
+      if (!data.payload) {
+        alert("Не удалось авторизоваться!");
+      } else if ("token" in data.payload) {
+        window.localStorage.setItem("token", data.payload.token);
+      }
+    } catch (error) {
+      console.error("Ошибка при отправке запроса:", error);
+      alert("Произошла ошибка при отправке запроса!");
+    } finally {
+      setIsLoading(false); // Возвращаем isLoading в false после получения ответа
     }
   }
 
