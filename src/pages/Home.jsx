@@ -53,17 +53,18 @@ export const Home = () => {
             items={[
               {
                 user: {
-                  fullName: 'Вася Пупкин',
+                  fullName: 'Frodo Baggins',
                   avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgc0hxD8EL2CUsCXcNqFaCO0yjHyg8tKuTdQ&s',
                 },
                 text: 'Это тестовый комментарий',
               },
               {
                 user: {
-                  fullName: 'Иван Иванов',
+                  fullName: 'Умка Медвежатова',
                   avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHrPCn6DOJbSWRnQb4Ub9_kkE2_w7dRZxsDA&s',
                 },
-                text: 'When displaying three lines or more, the avatar is not aligned at the top. You should set the prop to align the avatar at the top',
+                text: 'Данное приложение имитирует создание блога, ты можешь читать статьи, зарегистрированных пользователей, либо пройти регистрацию и стать автором.\n' +
+                   'В правом верхнем углу, нажми кнопку “войти”, если ты уже зарегистрирован, либо перейди во вкладку “регистрации” и пройди ее, после чего у тебя появится возможность написать свою первую статью.',
               },
             ]}
             isLoading={false}
