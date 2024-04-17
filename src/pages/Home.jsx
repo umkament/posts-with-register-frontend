@@ -54,14 +54,14 @@ export const Home = () => {
               {
                 user: {
                   fullName: 'Вася Пупкин',
-                  avatarUrl: 'https://www.vexels.com/png-svg/preview/138557/man-profile-silhouette-attitude',
+                  avatarUrl: 'https://e7.pngegg.com/pngimages/203/674/png-clipart-black-and-blue-wolf-illustration-wolf-avatar-splash-animals-thumbnail.png',
                 },
                 text: 'Это тестовый комментарий',
               },
               {
                 user: {
                   fullName: 'Иван Иванов',
-                  avatarUrl: 'https://www.vexels.com/png-svg/preview/140384/girl-profile-avatar-1',
+                  avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHrPCn6DOJbSWRnQb4Ub9_kkE2_w7dRZxsDA&s',
                 },
                 text: 'When displaying three lines or more, the avatar is not aligned at the top. You should set the prop to align the avatar at the top',
               },
